@@ -27,11 +27,17 @@ void hgMainLoop()
 {
     SDL_Event event;
     bool quit = false;
+    bool fullscreen = false;
     while ( !quit )
     {
         while ( SDL_PollEvent(&event) )
         {
             if ( event.type == SDL_QUIT ) { quit = true; }
+            if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_F11 )
+            {
+                fullscreen = !fullscreen;
+                SDL_SetWindowFullscreen( SDL2.getwindow(), SDL_WINDOW_FULLSCREEN_DESKTOP*fullscreen );
+            }
         }
         hgUpdateScreen();
     }

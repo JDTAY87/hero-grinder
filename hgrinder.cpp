@@ -19,7 +19,12 @@ bool hgInit()
     bool success = true;
     if ( !SDL2.init() ) { success = false; }
     else if ( !jfont2.loadtexture( SDL2.getrenderer(), "jfont2.png" ) ) { success = false; }
-    else { title.setmessage( "Hero Grinder" ); title.setfont( jfont2.gettexture() ); }
+    else
+    {
+        title.setmessage( "Hero Grinder" );
+        title.setfont( jfont2.gettexture() );
+        title.setpos( 26, 17 );
+    }
     return success;
 }
 
@@ -28,6 +33,7 @@ void hgMainLoop()
     SDL_Event event;
     bool quit = false;
     bool fullscreen = false;
+    bool paused = false;
     while ( !quit )
     {
         while ( SDL_PollEvent(&event) )
@@ -38,8 +44,10 @@ void hgMainLoop()
                 fullscreen = !fullscreen;
                 SDL_SetWindowFullscreen( SDL2.getwindow(), SDL_WINDOW_FULLSCREEN_DESKTOP*fullscreen );
             }
+            if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p ) { paused = !paused; }
+            if ( event.window.event == SDL_WINDOWEVENT_MINIMIZED ) { paused = true; }
         }
-        hgUpdateScreen();
+        if ( !paused ) { hgUpdateScreen(); } else { SDL_Delay( 1 ); }
     }
     return;
 }
@@ -49,7 +57,7 @@ void hgUpdateScreen()
     SDL_Renderer* renderer = SDL2.getrenderer();
     SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
     SDL_RenderClear( renderer );
-    title.render( renderer, 26, 17 );
+    title.render( renderer );
     SDL_RenderPresent( renderer );
     return;
 }

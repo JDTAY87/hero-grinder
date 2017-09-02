@@ -17,7 +17,14 @@ void hgMessage::setfont( SDL_Texture* texture )
     return;
 }
 
-void hgMessage::render( SDL_Renderer* renderer, int x, int y )
+void hgMessage::setpos( int x, int y )
+{
+    posx = x;
+    posy = y;
+    return;
+}
+
+void hgMessage::render( SDL_Renderer* renderer )
 {
     SDL_Rect srcrect;
     srcrect.h = 20;
@@ -31,8 +38,8 @@ void hgMessage::render( SDL_Renderer* renderer, int x, int y )
         {
             srcrect.x = (message[z]%16)*10;
             srcrect.y = (message[z]/16-2)*20;
-            dstrect.x = x*10+(z*10);
-            dstrect.y = y*10;
+            dstrect.x = posx*10+(z*10);
+            dstrect.y = posy*10;
             SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
         }
     }

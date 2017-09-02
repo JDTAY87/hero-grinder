@@ -10,7 +10,8 @@ class hgMessage
         hgMessage();
         void setmessage( const char* text );
         void setfont( SDL_Texture* texture );
-        void render( SDL_Renderer* renderer, int x, int y );
+        void setpos( int x, int y );
+        void render( SDL_Renderer* renderer );
         ~hgMessage();
 
     protected:
@@ -18,6 +19,8 @@ class hgMessage
     private:
         const char* message;
         SDL_Texture* font;
+        int posx;
+        int posy;
 };
 
 #endif // HGMESSAGE_H

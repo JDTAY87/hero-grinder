@@ -39,10 +39,19 @@
 			<Add directory="C:/mingwlib/lib" />
 		</Linker>
 		<Unit filename="hgrinder.cpp" />
+		<Unit filename="include/hgmenu.h" />
+		<Unit filename="include/hgmenudata.h" />
 		<Unit filename="include/hgmessage.h" />
+		<Unit filename="include/hgmsgdata.h" />
+		<Unit filename="include/hgobject.h" />
+		<Unit filename="include/hgscript.h" />
 		<Unit filename="include/hgsdl2.h" />
 		<Unit filename="include/hgtexture.h" />
+		<Unit filename="src/hgmenu.cpp" />
+		<Unit filename="src/hgmenudata.cpp" />
 		<Unit filename="src/hgmessage.cpp" />
+		<Unit filename="src/hgmsgdata.cpp" />
+		<Unit filename="src/hgscript.cpp" />
 		<Unit filename="src/hgsdl2.cpp" />
 		<Unit filename="src/hgtexture.cpp" />
 		<Extensions>

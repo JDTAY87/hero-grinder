@@ -1,13 +1,15 @@
 #include "hgmessage.h"
 
-hgMessage::hgMessage()
+hgMessage::hgMessage( hgMsgData* msgdata )
 {
+    data = msgdata;
+    message = "";
     return;
 }
 
-void hgMessage::setmessage( const char* text )
+void hgMessage::setmessage( int msgline, int line )
 {
-    message = text;
+    message = data->getdata( line );
     return;
 }
 
@@ -43,6 +45,13 @@ void hgMessage::render( SDL_Renderer* renderer )
             SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
         }
     }
+    return;
+}
+
+void hgMessage::execute( int funct, int arg1, int arg2 )
+{
+    void (hgMessage::*functs[])(int,int) = { &setpos, &setmessage };
+    (this->*functs[funct])( arg1, arg2 );
     return;
 }
 

@@ -1,6 +1,6 @@
 #include "hgmsgdata.h"
 
-const char* msgdata1[] =
+const char* hgMsgData::data[] =
 {
     "Hero Grinder"
 };
@@ -12,7 +12,7 @@ hgMsgData::hgMsgData()
 
 const char* hgMsgData::getdata( int line )
 {
-    return msgdata1[ line ];
+    return data[ line ];
 }
 
 hgMsgData::~hgMsgData()

@@ -12,6 +12,7 @@ class hgMsgData
     protected:
 
     private:
+        static const char* data[];
 };
 
 #endif // HGMSGDATA_H

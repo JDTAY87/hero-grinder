@@ -12,6 +12,7 @@ class hgMenuData
     protected:
 
     private:
+        static const char* data[];
 };
 
 #endif // HGMENUDATA_H

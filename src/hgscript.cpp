@@ -1,21 +1,7 @@
 #include "hgscript.h"
 
-enum scriptobjs
-{
-    obj_msg1, obj_menu1
-};
 
-enum msgactions
-{
-    msg_setpos, msg_setmsg
-};
-
-enum menuactions
-{
-    menu_setpos, menu_setopt
-};
-
-int gamescript[] =
+int hgScript::gamescript[] =
 {
     obj_msg1, msg_setmsg, 0, 0, 1,
     obj_msg1, msg_setpos, 26, 14, 1,

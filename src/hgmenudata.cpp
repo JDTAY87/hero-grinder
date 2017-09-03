@@ -1,6 +1,6 @@
 #include "hgmenudata.h"
 
-const char* menudata1[] =
+const char* hgMenuData::data[] =
 {
     " New Game", " Credits ", " Exit    "
 };
@@ -12,7 +12,7 @@ hgMenuData::hgMenuData()
 
 const char* hgMenuData::getdata( int line )
 {
-    return menudata1[ line ];
+    return data[ line ];
 }
 
 hgMenuData::~hgMenuData()

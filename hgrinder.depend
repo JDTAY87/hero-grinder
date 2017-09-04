@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1504418258 source:c:\test\hgrinder\hgrinder.cpp
+1504563334 source:c:\test\hgrinder\hgrinder.cpp
 	<stdio.h>
 	<string>
 	"SDL.h"
@@ -369,26 +369,26 @@
 1504385399 c:\test\hgrinder\include\hgobject.h
 	"SDL.h"
 
-1504413763 c:\test\hgrinder\include\hgmenu.h
+1504563166 c:\test\hgrinder\include\hgmenu.h
 	"SDL.h"
 	"hgobject.h"
 	"hgmenudata.h"
 
-1504413926 source:c:\test\hgrinder\src\hgmenu.cpp
+1504563272 source:c:\test\hgrinder\src\hgmenu.cpp
 	"hgmenu.h"
 
 1504460600 c:\test\hgrinder\include\hgmsgdata.h
 
-1504460494 c:\test\hgrinder\include\hgmenudata.h
+1504561222 c:\test\hgrinder\include\hgmenudata.h
 
-1504460276 c:\test\hgrinder\include\hgscript.h
+1504560826 c:\test\hgrinder\include\hgscript.h
 
-1504460517 source:c:\test\hgrinder\src\hgmenudata.cpp
+1504563351 source:c:\test\hgrinder\src\hgmenudata.cpp
 	"hgmenudata.h"
 
-1504416991 source:c:\test\hgrinder\src\hgmsgdata.cpp
+1504562111 source:c:\test\hgrinder\src\hgmsgdata.cpp
 	"hgmsgdata.h"
 
-1504460308 source:c:\test\hgrinder\src\hgscript.cpp
+1504562024 source:c:\test\hgrinder\src\hgscript.cpp
 	"hgscript.h"
 

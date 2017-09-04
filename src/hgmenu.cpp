@@ -3,13 +3,24 @@
 hgMenu::hgMenu( hgMenuData* menudata )
 {
     data = menudata;
-    for ( int z = 0; z < 10; z++ ) { options[z] = ""; }
+    noofoptions = 0;
+    cursorpos = 0;
+    for ( int z = 0; z < 10; z++ )
+    {
+        scriptptrs[z] = 0;
+        options[z] = "";
+    }
     return;
 }
 
-void hgMenu::setoption( int option, int line )
+void hgMenu::loadmenu( int location, int lines )
 {
-    options[ option ] = data->getdata( line );
+    noofoptions = lines;
+    for ( int z = 0; z < lines; z++ )
+    {
+        scriptptrs[z] = data->getptr( location+z );
+        options[z] = data->getdata( location+z );
+    }
     return;
 }
 
@@ -24,6 +35,19 @@ void hgMenu::setpos( int x, int y )
     posx = x;
     posy = y;
     return;
+}
+
+void hgMenu::setcursorpos( int change )
+{
+    cursorpos += change;
+    if ( cursorpos < 0 ) { cursorpos = noofoptions-1; }
+    else if ( cursorpos > noofoptions-1 ) { cursorpos = 0; }
+    return;
+}
+
+int hgMenu::getselection()
+{
+    return scriptptrs[ cursorpos ];
 }
 
 void hgMenu::render( SDL_Renderer* renderer )
@@ -48,12 +72,17 @@ void hgMenu::render( SDL_Renderer* renderer )
             }
         }
     }
+    srcrect.x = 140;
+    srcrect.y = 20;
+    dstrect.x = posx*10;
+    dstrect.y = posy*10+(cursorpos*20);
+    SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
     return;
 }
 
 void hgMenu::execute( int funct, int arg1, int arg2 )
 {
-    void (hgMenu::*functs[])(int,int) = { &setpos, &setoption };
+    void (hgMenu::*functs[])(int,int) = { &setpos, &loadmenu };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

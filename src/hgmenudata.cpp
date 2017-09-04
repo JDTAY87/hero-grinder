@@ -1,5 +1,10 @@
 #include "hgmenudata.h"
 
+int hgMenuData::menuptrs[] =
+{
+    4, 5, 6
+};
+
 const char* hgMenuData::data[] =
 {
     " New Game", " Credits ", " Exit    "
@@ -8,6 +13,11 @@ const char* hgMenuData::data[] =
 hgMenuData::hgMenuData()
 {
     return;
+}
+
+int hgMenuData::getptr( int line )
+{
+    return menuptrs[ line ];
 }
 
 const char* hgMenuData::getdata( int line )

@@ -14,7 +14,7 @@ class hgScript
     private:
         enum scriptobjs{obj_msg1, obj_menu1};
         enum msgactions{msg_setpos, msg_setmsg};
-        enum menuactions{menu_setpos, menu_setopt};
+        enum menuactions{menu_setpos, menu_loadmenu};
         static int gamescript[];
 };
 

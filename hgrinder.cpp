@@ -52,13 +52,26 @@ void hgMainLoop()
         while ( SDL_PollEvent(&event) )
         {
             if ( event.type == SDL_QUIT ) { quit = true; }
-            if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_F11 )
+            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_F11 )
             {
                 fullscreen = !fullscreen;
                 SDL_SetWindowFullscreen( SDL2.getwindow(), SDL_WINDOW_FULLSCREEN_DESKTOP*fullscreen );
             }
-            if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p ) { paused = !paused; }
-            if ( event.window.event == SDL_WINDOWEVENT_MINIMIZED ) { paused = true; }
+            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p ) { paused = !paused; }
+            else if ( event.window.event == SDL_WINDOWEVENT_MINIMIZED ) { paused = true; }
+            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP )
+            {
+                menu1.setcursorpos( -1 );
+            }
+            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_DOWN )
+            {
+                menu1.setcursorpos( 1 );
+            }
+            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_x )
+            {
+                scriptloc = menu1.getselection()*5;
+                scripttime = true;
+            }
         }
         if ( scripttime == true ) { hgDoScript( scriptloc ); scripttime = false; }
         if ( !paused ) { hgUpdateScreen(); } else { SDL_Delay( 1 ); }

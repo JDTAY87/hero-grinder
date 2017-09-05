@@ -12,6 +12,8 @@ class hgMenu : public hgObject
         void loadmenu( int location, int lines );
         void setfont( SDL_Texture* texture );
         void setpos( int x, int y );
+        void showmenu( int nil, int nada );
+        void hidemenu( int nil, int nada );
         void setcursorpos( int change );
         int getselection();
         void render( SDL_Renderer* renderer );
@@ -22,6 +24,7 @@ class hgMenu : public hgObject
 
     private:
         hgMenuData* data;
+        bool shown;
         int noofoptions;
         int scriptptrs[10];
         const char* options[10];

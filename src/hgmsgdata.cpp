@@ -2,7 +2,7 @@
 
 const char* hgMsgData::data[] =
 {
-    "Hero Grinder", "Coming soon.", " By JDTAY87 ", "  Goodbye.  "
+    "Hero Grinder", "Coming soon.", " By JDTAY87 "
 };
 
 hgMsgData::hgMsgData()

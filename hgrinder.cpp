@@ -10,15 +10,19 @@
 #include "hgmessage.h"
 #include "hgmenu.h"
 #include "hgscript.h"
+#include "hgdata.h"
 
 hgSDL2 SDL2;
 hgTexture jfont2;
+hgData data;
 hgMsgData msgdata;
 hgMenuData menudata;
 hgMessage msg1( &msgdata );
 hgMenu menu1( &menudata );
-hgObject* renderobjects[] = { &msg1, &menu1 };
-hgObject* scriptobjects[] = { &msg1, &menu1 };
+hgMenu menu2( &menudata );
+hgObject* renderobjects[] = { &msg1, &menu1, &menu2 };
+hgObject* scriptobjects[] = { &data, &msg1, &menu1, &menu2 };
+hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
 
 bool hgInit();
@@ -35,6 +39,7 @@ bool hgInit()
     {
         msg1.setfont( jfont2.gettexture() );
         menu1.setfont( jfont2.gettexture() );
+        menu2.setfont( jfont2.gettexture() );
     }
     return success;
 }
@@ -61,19 +66,20 @@ void hgMainLoop()
             else if ( event.window.event == SDL_WINDOWEVENT_MINIMIZED ) { paused = true; }
             else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP )
             {
-                menu1.setcursorpos( -1 );
+                menus[data.getmenu()]->setcursorpos( -1 );
             }
             else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_DOWN )
             {
-                menu1.setcursorpos( 1 );
+                menus[data.getmenu()]->setcursorpos( 1 );
             }
             else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_x )
             {
-                scriptloc = menu1.getselection()*5;
+                scriptloc = menus[data.getmenu()]->getselection()*5;
                 scripttime = true;
             }
         }
         if ( scripttime == true ) { hgDoScript( scriptloc ); scripttime = false; }
+        if ( data.quitselected() == true ) { quit = true; }
         if ( !paused ) { hgUpdateScreen(); } else { SDL_Delay( 1 ); }
     }
     return;
@@ -101,7 +107,7 @@ void hgUpdateScreen()
     SDL_Renderer* renderer = SDL2.getrenderer();
     SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
     SDL_RenderClear( renderer );
-    for ( int z = 0; z < 2; z++ ) { renderobjects[z]->render( renderer ); }
+    for ( int z = 0; z < 3; z++ ) { renderobjects[z]->render( renderer ); }
     SDL_RenderPresent( renderer );
     return;
 }

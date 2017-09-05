@@ -12,9 +12,10 @@ class hgScript
     protected:
 
     private:
-        enum scriptobjs{obj_msg1, obj_menu1};
+        enum scriptobjs{obj_data, obj_msg1, obj_menu1, obj_menu2};
+        enum dataactions{data_changemenu, data_selectquit};
         enum msgactions{msg_setpos, msg_setmsg};
-        enum menuactions{menu_setpos, menu_loadmenu};
+        enum menuactions{menu_setpos, menu_loadmenu, menu_showmenu, menu_hidemenu};
         static int gamescript[];
 };
 

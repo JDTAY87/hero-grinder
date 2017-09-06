@@ -8,7 +8,7 @@ hgSDL2::hgSDL2()
 bool hgSDL2::init()
 {
     bool success = true;
-    if ( SDL_Init(SDL_INIT_VIDEO) != 0 )
+    if ( SDL_Init(SDL_INIT_VIDEO|SDL_INIT_GAMECONTROLLER) != 0 )
     {
         printf( "hgSDL2::init failed. %s/n", SDL_GetError() );
         success = false;
@@ -19,6 +19,7 @@ bool hgSDL2::init()
         success = false;
     }
     else if ( !hgSDL2::createwindow() ) { success = false; }
+    else { controller = SDL_GameControllerOpen( (0) ); }
     return success;
 }
 
@@ -64,6 +65,7 @@ SDL_Renderer* hgSDL2::getrenderer()
 
 hgSDL2::~hgSDL2()
 {
+    SDL_GameControllerClose( controller );
     SDL_DestroyRenderer( renderer );
     renderer = NULL;
     SDL_DestroyWindow( window );

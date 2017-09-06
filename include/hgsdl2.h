@@ -21,6 +21,7 @@ class hgSDL2
         bool createrenderer();
         SDL_Window* window;
         SDL_Renderer* renderer;
+        SDL_GameController* controller;
 };
 
 #endif // HGSDL2_H

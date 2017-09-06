@@ -55,25 +55,48 @@ void hgMainLoop()
         while ( SDL_PollEvent(&event) )
         {
             if ( event.type == SDL_QUIT ) { quit = true; }
-            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_F11 )
-            {
-                fullscreen = !fullscreen;
-                SDL_SetWindowFullscreen( SDL2.getwindow(), SDL_WINDOW_FULLSCREEN_DESKTOP*fullscreen );
-            }
-            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_p ) { paused = !paused; }
             else if ( event.window.event == SDL_WINDOWEVENT_MINIMIZED ) { paused = true; }
-            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_UP )
+            else if ( event.type == SDL_KEYDOWN )
             {
-                menus[data.getmenu()]->setcursorpos( -1 );
+                switch ( event.key.keysym.sym )
+                {
+                case SDLK_F11:
+                    fullscreen = !fullscreen;
+                    SDL_SetWindowFullscreen( SDL2.getwindow(), SDL_WINDOW_FULLSCREEN_DESKTOP*fullscreen );
+                    break;
+                case SDLK_p:
+                    paused = !paused;
+                    break;
+                case SDLK_UP:
+                    menus[data.getmenu()]->setcursorpos( -1 );
+                    break;
+                case SDLK_DOWN:
+                    menus[data.getmenu()]->setcursorpos( 1 );
+                    break;
+                case SDLK_x:
+                    scriptloc = menus[data.getmenu()]->getselection()*5;
+                    scripttime = true;
+                    break;
+                }
             }
-            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_DOWN )
+            else if ( event.type == SDL_CONTROLLERBUTTONDOWN )
             {
-                menus[data.getmenu()]->setcursorpos( 1 );
-            }
-            else if ( event.type == SDL_KEYDOWN && event.key.keysym.sym == SDLK_x )
-            {
-                scriptloc = menus[data.getmenu()]->getselection()*5;
-                scripttime = true;
+                switch ( event.cbutton.button )
+                {
+                case SDL_CONTROLLER_BUTTON_START:
+                    paused = !paused;
+                    break;
+                case SDL_CONTROLLER_BUTTON_DPAD_UP:
+                    menus[data.getmenu()]->setcursorpos( -1 );
+                    break;
+                case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
+                    menus[data.getmenu()]->setcursorpos( 1 );
+                    break;
+                case SDL_CONTROLLER_BUTTON_A:
+                    scriptloc = menus[data.getmenu()]->getselection()*5;
+                    scripttime = true;
+                    break;
+                }
             }
         }
         if ( scripttime == true ) { hgDoScript( scriptloc ); scripttime = false; }

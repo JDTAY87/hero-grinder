@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1504691281 source:c:\test\hgrinder\hgrinder.cpp
+1504729157 source:c:\test\hgrinder\hgrinder.cpp
 	<stdio.h>
 	<string>
 	"hgsdl2.h"
@@ -337,7 +337,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1504690050 c:\test\hgrinder\include\hgsdl2.h
+1504729932 c:\test\hgrinder\include\hgsdl2.h
 	<stdio.h>
 	<string>
 	<SDL2/SDL.h>
@@ -354,7 +354,7 @@
 	<string>
 	"hgsdl2.h"
 
-1504414053 source:c:\test\hgrinder\src\hgmessage.cpp
+1504691978 source:c:\test\hgrinder\src\hgmessage.cpp
 	"hgmessage.h"
 
 1504690970 c:\test\hgrinder\include\hgmessage.h
@@ -370,7 +370,7 @@
 	"hgobject.h"
 	"hgmenudata.h"
 
-1504644961 source:c:\test\hgrinder\src\hgmenu.cpp
+1504691959 source:c:\test\hgrinder\src\hgmenu.cpp
 	"hgmenu.h"
 
 1504460600 c:\test\hgrinder\include\hgmsgdata.h

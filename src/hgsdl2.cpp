@@ -66,6 +66,7 @@ SDL_Renderer* hgSDL2::getrenderer()
 hgSDL2::~hgSDL2()
 {
     SDL_GameControllerClose( controller );
+    controller = NULL;
     SDL_DestroyRenderer( renderer );
     renderer = NULL;
     SDL_DestroyWindow( window );

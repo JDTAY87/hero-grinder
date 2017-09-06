@@ -1,6 +1,6 @@
 #ifndef HGOBJECT_H
 #define HGOBJECT_H
-#include <SDL2/SDL.h>
+#include "hgsdl2.h"
 
 class hgObject
 {

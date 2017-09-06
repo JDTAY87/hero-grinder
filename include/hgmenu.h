@@ -1,6 +1,5 @@
 #ifndef HGMENU_H
 #define HGMENU_H
-#include <SDL2/SDL.h>
 #include "hgobject.h"
 #include "hgmenudata.h"
 

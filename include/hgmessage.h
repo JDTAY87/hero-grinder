@@ -2,7 +2,7 @@
 #define HGMESSAGE_H
 #include <stdio.h>
 #include <string>
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "hgobject.h"
 #include "hgmsgdata.h"
 

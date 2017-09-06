@@ -1,6 +1,6 @@
 #ifndef HGDATA_H
 #define HGDATA_H
-#include "SDL.h"
+#include <SDL2/SDL.h>
 #include "hgobject.h"
 
 class hgData : public hgObject

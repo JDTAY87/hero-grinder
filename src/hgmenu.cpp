@@ -98,7 +98,7 @@ void hgMenu::render( SDL_Renderer* renderer )
 
 void hgMenu::execute( int funct, int arg1, int arg2 )
 {
-    void (hgMenu::*functs[])(int,int) = { &setpos, &loadmenu, &showmenu, &hidemenu };
+    void (hgMenu::*functs[])(int,int) = { &hgMenu::setpos, &hgMenu::loadmenu, &hgMenu::showmenu, &hgMenu::hidemenu };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

@@ -50,7 +50,7 @@ void hgMessage::render( SDL_Renderer* renderer )
 
 void hgMessage::execute( int funct, int arg1, int arg2 )
 {
-    void (hgMessage::*functs[])(int,int) = { &setpos, &setmessage };
+    void (hgMessage::*functs[])(int,int) = { &hgMessage::setpos, &hgMessage::setmessage };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

@@ -25,6 +25,7 @@ void hgData::changemenu( int menu, int nada )
 void hgData::selectquit( int nil, int nada )
 {
     quit = true;
+    return;
 }
 
 void hgData::render( SDL_Renderer* renderer )
@@ -34,7 +35,7 @@ void hgData::render( SDL_Renderer* renderer )
 
 void hgData::execute( int funct, int arg1, int arg2 )
 {
-    void (hgData::*functs[])(int,int) = { &changemenu, &selectquit };
+    void (hgData::*functs[])(int,int) = { &hgData::changemenu, &hgData::selectquit };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

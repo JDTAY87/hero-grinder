@@ -16,10 +16,11 @@ hgData data;
 hgMsgData msgdata;
 hgMenuData menudata;
 hgMessage msg1( &msgdata );
+hgMessage msg2( &msgdata );
 hgMenu menu1( &menudata );
 hgMenu menu2( &menudata );
-hgObject* renderobjects[] = { &msg1, &menu1, &menu2 };
-hgObject* scriptobjects[] = { &data, &msg1, &menu1, &menu2 };
+hgObject* renderobjects[] = { &msg1, &msg2, &menu1, &menu2 };
+hgObject* scriptobjects[] = { &data, &msg1, &msg2, &menu1, &menu2 };
 hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
 
@@ -36,6 +37,7 @@ bool hgInit()
     else
     {
         msg1.setfont( jfont2.gettexture() );
+        msg2.setfont( jfont2.gettexture() );
         menu1.setfont( jfont2.gettexture() );
         menu2.setfont( jfont2.gettexture() );
     }

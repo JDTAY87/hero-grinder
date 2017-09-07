@@ -73,7 +73,7 @@ void hgMenu::render( SDL_Renderer* renderer )
         SDL_Rect dstrect;
         dstrect.h = 20;
         dstrect.w = 10;
-        for ( int z1 = 0; z1 < 10; z1++ )
+        for ( int z1 = 0; z1 < noofoptions; z1++ )
         {
             for ( int z2 = 0; options[z1][z2] != 0; z2++ )
             {

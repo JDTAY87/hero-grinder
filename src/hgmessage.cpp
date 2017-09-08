@@ -65,6 +65,12 @@ void hgMessage::render( SDL_Renderer* renderer )
         SDL_RenderFillRect( renderer, &box );
         SDL_SetRenderDrawColor( renderer, 51, 51, 51, 255 );
         SDL_RenderDrawRect( renderer, &box );
+        SDL_Rect box2;
+        box2.x = box.x+1;
+        box2.y = box.y+1;
+        box2.w = box.w-2;
+        box2.h = box.h-2;
+        SDL_RenderDrawRect( renderer, &box2 );
         SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
         SDL_Rect srcrect;
         srcrect.h = 20;

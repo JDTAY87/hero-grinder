@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1504829282 source:c:\test\hgrinder\hgrinder.cpp
+1504878306 source:c:\test\hgrinder\hgrinder.cpp
 	<stdio.h>
 	<string>
 	"hgsdl2.h"
@@ -11,6 +11,7 @@
 	"hgmenu.h"
 	"hgscript.h"
 	"hgdata.h"
+	"hgbackground.h"
 
 1476939494 c:\mingwlib\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -354,10 +355,10 @@
 	<string>
 	"hgsdl2.h"
 
-1504829908 source:c:\test\hgrinder\src\hgmessage.cpp
+1504880097 source:c:\test\hgrinder\src\hgmessage.cpp
 	"hgmessage.h"
 
-1504829695 c:\test\hgrinder\include\hgmessage.h
+1504879929 c:\test\hgrinder\include\hgmessage.h
 	<stdio.h>
 	<string>
 	"hgobject.h"
@@ -366,26 +367,26 @@
 1504690923 c:\test\hgrinder\include\hgobject.h
 	"hgsdl2.h"
 
-1504690956 c:\test\hgrinder\include\hgmenu.h
+1504878747 c:\test\hgrinder\include\hgmenu.h
 	"hgobject.h"
 	"hgmenudata.h"
 
-1504828915 source:c:\test\hgrinder\src\hgmenu.cpp
+1504879700 source:c:\test\hgrinder\src\hgmenu.cpp
 	"hgmenu.h"
 
 1504460600 c:\test\hgrinder\include\hgmsgdata.h
 
 1504561222 c:\test\hgrinder\include\hgmenudata.h
 
-1504829787 c:\test\hgrinder\include\hgscript.h
+1504880124 c:\test\hgrinder\include\hgscript.h
 
-1504645037 source:c:\test\hgrinder\src\hgmenudata.cpp
+1504880185 source:c:\test\hgrinder\src\hgmenudata.cpp
 	"hgmenudata.h"
 
 1504647341 source:c:\test\hgrinder\src\hgmsgdata.cpp
 	"hgmsgdata.h"
 
-1504829826 source:c:\test\hgrinder\src\hgscript.cpp
+1504880296 source:c:\test\hgrinder\src\hgscript.cpp
 	"hgscript.h"
 
 1504690939 c:\test\hgrinder\include\hgdata.h
@@ -718,4 +719,10 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1504878015 source:c:\test\hgrinder\src\hgbackground.cpp
+	"hgbackground.h"
+
+1504878196 c:\test\hgrinder\include\hgbackground.h
+	"hgobject.h"
 

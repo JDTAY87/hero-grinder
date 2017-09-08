@@ -11,6 +11,7 @@ class hgMenu : public hgObject
         void loadmenu( int location, int lines );
         void setfont( SDL_Texture* texture );
         void setpos( int x, int y );
+        void setsize( int x, int y );
         void showmenu( int nil, int nada );
         void hidemenu( int nil, int nada );
         void setcursorpos( int change );
@@ -31,6 +32,7 @@ class hgMenu : public hgObject
         int cursorpos;
         int posx;
         int posy;
+        SDL_Rect box;
 };
 
 #endif // HGMENU_H

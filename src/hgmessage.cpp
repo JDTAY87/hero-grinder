@@ -34,6 +34,15 @@ void hgMessage::setpos( int x, int y )
 {
     posx = x;
     posy = y;
+    box.x = x*10-2;
+    box.y = y*10-2;
+    return;
+}
+
+void hgMessage::setsize( int x, int y )
+{
+    box.w = x*10+4;
+    box.h = y*20+8;
     return;
 }
 
@@ -53,6 +62,10 @@ void hgMessage::render( SDL_Renderer* renderer )
 {
     if ( shown == true )
     {
+        SDL_RenderFillRect( renderer, &box );
+        SDL_SetRenderDrawColor( renderer, 51, 51, 51, 255 );
+        SDL_RenderDrawRect( renderer, &box );
+        SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
         SDL_Rect srcrect;
         srcrect.h = 20;
         srcrect.w = 10;
@@ -79,7 +92,11 @@ void hgMessage::render( SDL_Renderer* renderer )
 
 void hgMessage::execute( int funct, int arg1, int arg2 )
 {
-    void (hgMessage::*functs[])(int,int) = { &hgMessage::setpos, &hgMessage::setlines, &hgMessage::setmessage, &hgMessage::showmessage, &hgMessage::hidemessage };
+    void (hgMessage::*functs[])(int,int) =
+    {
+        &hgMessage::setpos, &hgMessage::setlines, &hgMessage::setmessage, &hgMessage::showmessage,
+        &hgMessage::hidemessage, &hgMessage::setsize
+    };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

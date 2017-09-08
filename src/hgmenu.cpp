@@ -35,6 +35,15 @@ void hgMenu::setpos( int x, int y )
 {
     posx = x;
     posy = y;
+    box.x = x*10-2;
+    box.y = y*10-2;
+    return;
+}
+
+void hgMenu::setsize( int x, int y )
+{
+    box.w = x*10+4;
+    box.h = y*20+8;
     return;
 }
 
@@ -67,6 +76,10 @@ void hgMenu::render( SDL_Renderer* renderer )
 {
     if ( shown == true )
     {
+        SDL_RenderFillRect( renderer, &box );
+        SDL_SetRenderDrawColor( renderer, 51, 51, 51, 255 );
+        SDL_RenderDrawRect( renderer, &box );
+        SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
         SDL_Rect srcrect;
         srcrect.h = 20;
         srcrect.w = 10;
@@ -98,7 +111,10 @@ void hgMenu::render( SDL_Renderer* renderer )
 
 void hgMenu::execute( int funct, int arg1, int arg2 )
 {
-    void (hgMenu::*functs[])(int,int) = { &hgMenu::setpos, &hgMenu::loadmenu, &hgMenu::showmenu, &hgMenu::hidemenu };
+    void (hgMenu::*functs[])(int,int) =
+    {
+        &hgMenu::setpos, &hgMenu::loadmenu, &hgMenu::showmenu, &hgMenu::hidemenu, &hgMenu::setsize
+    };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

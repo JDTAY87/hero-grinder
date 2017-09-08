@@ -9,17 +9,20 @@
 #include "hgmenu.h"
 #include "hgscript.h"
 #include "hgdata.h"
+#include "hgbackground.h"
 
 hgSDL2 SDL2;
 hgTexture jfont2;
+hgTexture hgbg01;
 hgData data;
+hgBackground background;
 hgMsgData msgdata;
 hgMenuData menudata;
 hgMessage msg1( &msgdata );
 hgMessage msg2( &msgdata );
 hgMenu menu1( &menudata );
 hgMenu menu2( &menudata );
-hgObject* renderobjects[] = { &msg1, &msg2, &menu1, &menu2 };
+hgObject* renderobjects[] = { &background, &msg1, &msg2, &menu1, &menu2 };
 hgObject* scriptobjects[] = { &data, &msg1, &msg2, &menu1, &menu2 };
 hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
@@ -34,8 +37,10 @@ bool hgInit()
     bool success = true;
     if ( !SDL2.init() ) { success = false; }
     else if ( !jfont2.loadtexture( SDL2.getrenderer(), "jfont2.png" ) ) { success = false; }
+    else if ( !hgbg01.loadtexture( SDL2.getrenderer(), "hgbg01.png" ) ) { success = false; }
     else
     {
+        background.settexture( hgbg01.gettexture() );
         msg1.setfont( jfont2.gettexture() );
         msg2.setfont( jfont2.gettexture() );
         menu1.setfont( jfont2.gettexture() );
@@ -130,7 +135,7 @@ void hgUpdateScreen()
     SDL_Renderer* renderer = SDL2.getrenderer();
     SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
     SDL_RenderClear( renderer );
-    for ( int z = 0; z < 3; z++ ) { renderobjects[z]->render( renderer ); }
+    for ( int z = 0; z < 5; z++ ) { renderobjects[z]->render( renderer ); }
     SDL_RenderPresent( renderer );
     return;
 }

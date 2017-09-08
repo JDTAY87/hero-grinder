@@ -2,7 +2,7 @@
 
 int hgMenuData::menuptrs[] =
 {
-    7, 8, 9
+    9, 10, 11
 };
 
 const char* hgMenuData::data[] =

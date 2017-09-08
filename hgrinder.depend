@@ -355,7 +355,7 @@
 	<string>
 	"hgsdl2.h"
 
-1504880097 source:c:\test\hgrinder\src\hgmessage.cpp
+1504894413 source:c:\test\hgrinder\src\hgmessage.cpp
 	"hgmessage.h"
 
 1504879929 c:\test\hgrinder\include\hgmessage.h
@@ -371,7 +371,7 @@
 	"hgobject.h"
 	"hgmenudata.h"
 
-1504879700 source:c:\test\hgrinder\src\hgmenu.cpp
+1504894451 source:c:\test\hgrinder\src\hgmenu.cpp
 	"hgmenu.h"
 
 1504460600 c:\test\hgrinder\include\hgmsgdata.h

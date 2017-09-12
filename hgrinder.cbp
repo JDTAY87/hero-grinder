@@ -48,6 +48,8 @@
 		<Unit filename="include/hgobject.h" />
 		<Unit filename="include/hgscript.h" />
 		<Unit filename="include/hgsdl2.h" />
+		<Unit filename="include/hgsprdata.h" />
+		<Unit filename="include/hgsprite.h" />
 		<Unit filename="include/hgtexture.h" />
 		<Unit filename="src/hgbackground.cpp" />
 		<Unit filename="src/hgdata.cpp" />
@@ -57,6 +59,8 @@
 		<Unit filename="src/hgmsgdata.cpp" />
 		<Unit filename="src/hgscript.cpp" />
 		<Unit filename="src/hgsdl2.cpp" />
+		<Unit filename="src/hgsprdata.cpp" />
+		<Unit filename="src/hgsprite.cpp" />
 		<Unit filename="src/hgtexture.cpp" />
 		<Extensions>
 			<code_completion />

@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1504878306 source:c:\test\hgrinder\hgrinder.cpp
+1505199219 source:c:\test\hgrinder\hgrinder.cpp
 	<stdio.h>
 	<string>
 	"hgsdl2.h"
@@ -12,6 +12,8 @@
 	"hgscript.h"
 	"hgdata.h"
 	"hgbackground.h"
+	"hgsprdata.h"
+	"hgsprite.h"
 
 1476939494 c:\mingwlib\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -378,21 +380,21 @@
 
 1504561222 c:\test\hgrinder\include\hgmenudata.h
 
-1504880124 c:\test\hgrinder\include\hgscript.h
+1505197505 c:\test\hgrinder\include\hgscript.h
 
-1504880185 source:c:\test\hgrinder\src\hgmenudata.cpp
+1505198795 source:c:\test\hgrinder\src\hgmenudata.cpp
 	"hgmenudata.h"
 
-1504647341 source:c:\test\hgrinder\src\hgmsgdata.cpp
+1505197736 source:c:\test\hgrinder\src\hgmsgdata.cpp
 	"hgmsgdata.h"
 
-1504880296 source:c:\test\hgrinder\src\hgscript.cpp
+1505198999 source:c:\test\hgrinder\src\hgscript.cpp
 	"hgscript.h"
 
-1504690939 c:\test\hgrinder\include\hgdata.h
+1505172542 c:\test\hgrinder\include\hgdata.h
 	"hgobject.h"
 
-1504691920 source:c:\test\hgrinder\src\hgdata.cpp
+1505199219 source:c:\test\hgrinder\src\hgdata.cpp
 	"hgdata.h"
 
 1476939494 c:\mingwlib\include\\sdl2\sdl.h
@@ -725,4 +727,16 @@
 
 1504878196 c:\test\hgrinder\include\hgbackground.h
 	"hgobject.h"
+
+1505150897 c:\test\hgrinder\include\hgsprdata.h
+
+1505151243 c:\test\hgrinder\include\hgsprite.h
+	"hgobject.h"
+	"hgsprdata.h"
+
+1505150702 source:c:\test\hgrinder\src\hgsprdata.cpp
+	"hgsprdata.h"
+
+1505199054 source:c:\test\hgrinder\src\hgsprite.cpp
+	"hgsprite.h"
 

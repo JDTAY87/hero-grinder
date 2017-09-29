@@ -87,7 +87,7 @@ void hgMessage::render( SDL_Renderer* renderer )
                     srcrect.x = (message[z1][z2]%16)*10;
                     srcrect.y = (message[z1][z2]/16-2)*20;
                     dstrect.x = posx*10+(z2*10);
-                    dstrect.y = posy*10+(z1*10);
+                    dstrect.y = posy*10+(z1*20);
                     SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
                 }
             }

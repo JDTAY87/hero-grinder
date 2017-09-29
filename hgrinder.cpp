@@ -12,6 +12,7 @@
 #include "hgbackground.h"
 #include "hgsprdata.h"
 #include "hgsprite.h"
+#include "hgstats.h"
 
 hgSDL2 SDL2;
 hgTexture jfont2;
@@ -22,13 +23,14 @@ hgSprData sprdata;
 hgMsgData msgdata;
 hgMenuData menudata;
 hgBackground background;
-hgSprite hero( &sprdata );
+hgSprite herospr( &sprdata );
 hgMessage msg1( &msgdata );
 hgMessage msg2( &msgdata );
 hgMenu menu1( &menudata );
 hgMenu menu2( &menudata );
-hgObject* renderobjects[] = { &background, &hero, &msg1, &msg2, &menu1, &menu2 };
-hgObject* scriptobjects[] = { &maindata, &hero, &msg1, &msg2, &menu1, &menu2 };
+hgStats herostats;
+hgObject* renderobjects[] = { &background, &herospr, &msg1, &msg2, &menu1, &menu2, &herostats };
+hgObject* scriptobjects[] = { &maindata, &herospr, &msg1, &msg2, &menu1, &menu2, &herostats };
 hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
 
@@ -47,11 +49,12 @@ bool hgInit()
     else
     {
         background.settexture( hgbg01.gettexture() );
-        hero.settextture( hgcowboy.gettexture() );
+        herospr.settextture( hgcowboy.gettexture() );
         msg1.setfont( jfont2.gettexture() );
         msg2.setfont( jfont2.gettexture() );
         menu1.setfont( jfont2.gettexture() );
         menu2.setfont( jfont2.gettexture() );
+        herostats.setfont( jfont2.gettexture() );
     }
     return success;
 }
@@ -144,7 +147,7 @@ void hgUpdateScreen()
     SDL_Renderer* renderer = SDL2.getrenderer();
     SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
     SDL_RenderClear( renderer );
-    for ( int z = 0; z < 6; z++ ) { renderobjects[z]->render( renderer ); }
+    for ( int z = 0; z < 7; z++ ) { renderobjects[z]->render( renderer ); }
     SDL_RenderPresent( renderer );
     return;
 }

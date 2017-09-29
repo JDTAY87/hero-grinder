@@ -2,7 +2,7 @@
 
 int hgSprData::sprprops[] =
 {
-    80, 80, 4, 3
+    80, 80, 2, 1
 };
 
 hgSprData::hgSprData()

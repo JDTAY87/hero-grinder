@@ -13,6 +13,7 @@
 #include "hgsprdata.h"
 #include "hgsprite.h"
 #include "hgstats.h"
+#include "hgdate.h"
 
 hgSDL2 SDL2;
 hgTexture jfont2;
@@ -28,9 +29,10 @@ hgMessage msg1( &msgdata );
 hgMessage msg2( &msgdata );
 hgMenu menu1( &menudata );
 hgMenu menu2( &menudata );
+hgDate gamedate;
 hgStats herostats;
-hgObject* renderobjects[] = { &background, &herospr, &msg1, &msg2, &menu1, &menu2, &herostats };
-hgObject* scriptobjects[] = { &maindata, &herospr, &msg1, &msg2, &menu1, &menu2, &herostats };
+hgObject* renderobjects[] = { &background, &herospr, &msg1, &msg2, &menu1, &menu2, &gamedate, &herostats };
+hgObject* scriptobjects[] = { &maindata, &herospr, &msg1, &msg2, &menu1, &menu2, &gamedate, &herostats };
 hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
 
@@ -54,6 +56,7 @@ bool hgInit()
         msg2.setfont( jfont2.gettexture() );
         menu1.setfont( jfont2.gettexture() );
         menu2.setfont( jfont2.gettexture() );
+        gamedate.setfont( jfont2.gettexture() );
         herostats.setfont( jfont2.gettexture() );
     }
     return success;
@@ -147,7 +150,7 @@ void hgUpdateScreen()
     SDL_Renderer* renderer = SDL2.getrenderer();
     SDL_SetRenderDrawColor( renderer, 0, 0, 0, 255 );
     SDL_RenderClear( renderer );
-    for ( int z = 0; z < 7; z++ ) { renderobjects[z]->render( renderer ); }
+    for ( int z = 0; z < 8; z++ ) { renderobjects[z]->render( renderer ); }
     SDL_RenderPresent( renderer );
     return;
 }

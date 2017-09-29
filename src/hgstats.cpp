@@ -30,6 +30,13 @@ void hgStats::hidestats( int nil, int nada )
     return;
 }
 
+void hgStats::trainstat( int stattotrain, int nada )
+{
+    stats[stattotrain] += 4;
+    if ( stats[stattotrain] > 999 ) { stats[stattotrain] = 999; }
+    return;
+}
+
 void hgStats::render( SDL_Renderer* renderer )
 {
     if ( shown == true )
@@ -84,7 +91,7 @@ void hgStats::execute( int funct, int arg1, int arg2 )
 {
     void (hgStats::*functs[])(int,int) =
     {
-        &hgStats::showstats, &hgStats::hidestats
+        &hgStats::showstats, &hgStats::hidestats, &hgStats::trainstat
     };
     (this->*functs[funct])( arg1, arg2 );
     return;

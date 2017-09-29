@@ -2,16 +2,18 @@
 
 int hgMenuData::menuptrs[] =
 {
-    9, 19, 20,
-    0, 1, 2, 3, 4, 10,
-    11
+    9, 20, 21,
+    0, 6, 7, 8, 9, 15,
+    16,
+    0, 1, 2, 3, 4, 5, 6
 };
 
 const char* hgMenuData::data[] =
 {
     " New Game", " Credits ", " Exit    ",
     " Train ", " Rest  ", " Events", " City  ", " Status", " Exit  ",
-    " Return"
+    " Return",
+    "  POW", "  INT", "  ACC", "  SPD", "  DEF", "  VIT", "  Back"
 };
 
 hgMenuData::hgMenuData()

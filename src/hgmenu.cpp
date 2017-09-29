@@ -56,6 +56,7 @@ void hgMenu::showmenu( int nil, int nada )
 void hgMenu::hidemenu( int nil, int nada )
 {
     shown = false;
+    cursorpos = 0;
     return;
 }
 

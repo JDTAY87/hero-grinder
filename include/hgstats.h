@@ -10,6 +10,7 @@ class hgStats : public hgObject
         void setfont( SDL_Texture* texture );
         void showstats( int nil, int nada );
         void hidestats( int nil, int nada );
+        void trainstat( int stattotrain, int nada );
         void render( SDL_Renderer* renderer );
         void execute( int funct, int arg1, int arg2 );
         ~hgStats();

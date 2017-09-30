@@ -3,7 +3,9 @@
 const char* hgMsgData::data[] =
 {
     " Hero Grinder", "  Coming soon.", "  By JDTAY87 ",
-    " Grinder Fields"
+    " Grinder Fields",
+    " POW went up % to %.", " INT went up % to %.", " ACC went up % to %.",
+    " SPD went up % to %.", " DEF went up % to %.", " VIT went up % to %."
 };
 
 hgMsgData::hgMsgData()

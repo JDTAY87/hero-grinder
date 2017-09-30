@@ -32,8 +32,16 @@ void hgStats::hidestats( int nil, int nada )
 
 void hgStats::trainstat( int stattotrain, int nada )
 {
-    stats[stattotrain] += 4;
+    statgain = 4;
+    stats[stattotrain] += statgain;
     if ( stats[stattotrain] > 999 ) { stats[stattotrain] = 999; }
+    return;
+}
+
+void hgStats::push( int inttopush, int location )
+{
+    int* vars[] = { &stats[0], &stats[1], &stats[2], &stats[3], &stats[4], &stats[5], &statgain };
+    pushpull[location] = *vars[inttopush];
     return;
 }
 
@@ -91,7 +99,7 @@ void hgStats::execute( int funct, int arg1, int arg2 )
 {
     void (hgStats::*functs[])(int,int) =
     {
-        &hgStats::showstats, &hgStats::hidestats, &hgStats::trainstat
+        &hgStats::push, &hgStats::showstats, &hgStats::hidestats, &hgStats::trainstat
     };
     (this->*functs[funct])( arg1, arg2 );
     return;

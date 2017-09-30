@@ -60,6 +60,7 @@
 		<Unit filename="src/hgmenudata.cpp" />
 		<Unit filename="src/hgmessage.cpp" />
 		<Unit filename="src/hgmsgdata.cpp" />
+		<Unit filename="src/hgobject.cpp" />
 		<Unit filename="src/hgscript.cpp" />
 		<Unit filename="src/hgsdl2.cpp" />
 		<Unit filename="src/hgsprdata.cpp" />

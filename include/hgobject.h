@@ -9,6 +9,7 @@ class hgObject
         virtual void render( SDL_Renderer* renderer ) = 0;
 
     protected:
+        static int pushpull[10];
 
     private:
 };

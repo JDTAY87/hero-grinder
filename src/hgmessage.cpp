@@ -78,19 +78,44 @@ void hgMessage::render( SDL_Renderer* renderer )
         SDL_Rect dstrect;
         dstrect.h = 20;
         dstrect.w = 10;
+        dstrect.x = posx*10;
+        dstrect.y = posy*10;
+        int pullcount = 0;
         for ( int z1 = 0; z1 < nooflines; z1++ )
         {
             for ( int z2 = 0; message[z1][z2] != 0; z2++ )
             {
-                if ( message[z1][z2] > 31 )
+                if ( message[z1][z2] != 37 )
                 {
                     srcrect.x = (message[z1][z2]%16)*10;
                     srcrect.y = (message[z1][z2]/16-2)*20;
-                    dstrect.x = posx*10+(z2*10);
-                    dstrect.y = posy*10+(z1*20);
                     SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                    dstrect.x += 10;
+                }
+                else
+                {
+                    int sizeofpull = 0;
+                    int compareint = 1;
+                    int pull = pushpull[pullcount];
+                    while ( pull >= compareint )
+                    {
+                        sizeofpull++;
+                        compareint *= 10;
+                    }
+                    dstrect.x += sizeofpull*10;
+                    srcrect.y = 20;
+                    for ( int z = sizeofpull; z != 0; z-- )
+                    {
+                        dstrect.x -= 10;
+                        srcrect.x = (pull%10)*10;
+                        SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                        pull /= 10;
+                    }
+                    dstrect.x += sizeofpull*10;
+                    pullcount++;
                 }
             }
+            dstrect.y += 20;
         }
     }
     return;

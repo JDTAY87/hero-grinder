@@ -1,5 +1,5 @@
 # depslib dependency file v1.0
-1506696019 source:c:\test\hgrinder\hgrinder.cpp
+1506862293 source:c:\test\hgrinder\hgrinder.cpp
 	<stdio.h>
 	<string>
 	"hgsdl2.h"
@@ -382,12 +382,12 @@
 
 1504561222 c:\test\hgrinder\include\hgmenudata.h
 
-1506818729 c:\test\hgrinder\include\hgscript.h
+1506863068 c:\test\hgrinder\include\hgscript.h
 
-1506793374 source:c:\test\hgrinder\src\hgmenudata.cpp
+1506863920 source:c:\test\hgrinder\src\hgmenudata.cpp
 	"hgmenudata.h"
 
-1506792195 source:c:\test\hgrinder\src\hgmsgdata.cpp
+1506863324 source:c:\test\hgrinder\src\hgmsgdata.cpp
 	"hgmsgdata.h"
 
 1506818793 source:c:\test\hgrinder\src\hgscript.cpp
@@ -724,10 +724,10 @@
 	"begin_code.h"
 	"close_code.h"
 
-1504878015 source:c:\test\hgrinder\src\hgbackground.cpp
+1506862213 source:c:\test\hgrinder\src\hgbackground.cpp
 	"hgbackground.h"
 
-1504878196 c:\test\hgrinder\include\hgbackground.h
+1506862091 c:\test\hgrinder\include\hgbackground.h
 	"hgobject.h"
 
 1505150897 c:\test\hgrinder\include\hgsprdata.h

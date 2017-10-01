@@ -6,7 +6,8 @@ const char* hgMsgData::data[] =
     " Grinder Fields",
     " POW went up % to %.", " INT went up % to %.", " ACC went up % to %.",
     " SPD went up % to %.", " DEF went up % to %.", " VIT went up % to %.",
-    " The hero rests this week."
+    " The hero rests this week.",
+    "  Grinder City"
 };
 
 hgMsgData::hgMsgData()

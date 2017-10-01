@@ -18,6 +18,7 @@
 hgSDL2 SDL2;
 hgTexture jfont2;
 hgTexture hgbg01;
+hgTexture hgbg02;
 hgTexture hgcowboy;
 hgData maindata;
 hgSprData sprdata;
@@ -32,7 +33,7 @@ hgMenu menu2( &menudata );
 hgDate gamedate;
 hgStats herostats;
 hgObject* renderobjects[] = { &background, &herospr, &msg1, &msg2, &menu1, &menu2, &gamedate, &herostats };
-hgObject* scriptobjects[] = { &maindata, &herospr, &msg1, &msg2, &menu1, &menu2, &gamedate, &herostats };
+hgObject* scriptobjects[] = { &maindata, &background, &herospr, &msg1, &msg2, &menu1, &menu2, &gamedate, &herostats };
 hgMenu* menus[] = { &menu1, &menu2 };
 hgScript script;
 
@@ -47,10 +48,12 @@ bool hgInit()
     if ( !SDL2.init() ) { success = false; }
     else if ( !jfont2.loadtexture( SDL2.getrenderer(), "jfont2.png" ) ) { success = false; }
     else if ( !hgbg01.loadtexture( SDL2.getrenderer(), "hgbg01.png" ) ) { success = false; }
+    else if ( !hgbg02.loadtexture( SDL2.getrenderer(), "hgbg02.png" ) ) { success = false; }
     else if ( !hgcowboy.loadtexture( SDL2.getrenderer(), "hgcowboy.png" ) ) { success = false; }
     else
     {
-        background.settexture( hgbg01.gettexture() );
+        background.settexture( 0, hgbg01.gettexture() );
+        background.settexture( 1, hgbg02.gettexture() );
         herospr.settextture( hgcowboy.gettexture() );
         msg1.setfont( jfont2.gettexture() );
         msg2.setfont( jfont2.gettexture() );

@@ -45,7 +45,13 @@ int hgScript::fieldsmenu[] =
     obj_menu2, menu_setpos, 28, 26, 1,
     obj_menu2, menu_showmenu, 0, 0, 1,
     obj_data, data_changemenu, 1, 0, 0,
-    obj_msg1, msg_setmsg, 0, 1, 0,
+    obj_bg, bg_setbg, 1, 0, 1,
+    obj_msg1, msg_setmsg, 0, 11, 1,
+    obj_menu1, menu_hidemenu, 0, 0, 1,
+    obj_menu1, menu_setsize, 8, 3, 1,
+    obj_menu1, menu_loadmenu, 19, 3, 1,
+    obj_menu1, menu_showmenu, 0, 0, 1,
+    obj_data, data_changescript, 3, 0, 0,
     obj_msg1, msg_setmsg, 0, 1, 0,
     obj_herostats, stat_showstats, 0, 0, 1,
     obj_menu2, menu_loadmenu, 9, 1, 1,
@@ -153,7 +159,23 @@ int hgScript::trainmenu[] =
     obj_data, data_changescript, 1, 0, 0
 };
 
-int* hgScript::scripts[] = { &hgScript::titlemenu[0], &hgScript::fieldsmenu[0], &hgScript::trainmenu[0] };
+int hgScript::citymenu[] =
+{
+    obj_bg, bg_setbg, 0, 0, 1,
+    obj_msg1, msg_setmsg, 0, 3, 1,
+    obj_menu1, menu_hidemenu, 0, 0, 1,
+    obj_menu1, menu_setsize, 8, 6, 1,
+    obj_menu1, menu_loadmenu, 3, 6, 1,
+    obj_menu1, menu_showmenu, 0, 0, 1,
+    obj_data, data_changescript, 1, 0, 0,
+    obj_msg1, msg_setmsg, 0, 1, 0,
+    obj_data, data_selectquit, 0, 0, 0
+};
+
+int* hgScript::scripts[] =
+{
+    &hgScript::titlemenu[0], &hgScript::fieldsmenu[0], &hgScript::trainmenu[0], &hgScript::citymenu[0]
+};
 
 hgScript::hgScript()
 {

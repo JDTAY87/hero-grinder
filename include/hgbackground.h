@@ -6,7 +6,8 @@ class hgBackground : public hgObject
 {
     public:
         hgBackground();
-        void settexture( SDL_Texture* texture );
+        void settexture( int number, SDL_Texture* texture );
+        void setbg( int number, int nada );
         void render( SDL_Renderer* renderer );
         void execute( int funct, int arg1, int arg2 );
         ~hgBackground();
@@ -14,7 +15,8 @@ class hgBackground : public hgObject
     protected:
 
     private:
-        SDL_Texture* background;
+        SDL_Texture* background[2];
+        int currentbg;
 };
 
 #endif // HGBACKGROUND_H

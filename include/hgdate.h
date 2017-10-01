@@ -10,6 +10,7 @@ class hgDate : public hgObject
         void setfont( SDL_Texture* texture );
         void showdate( int nil, int nada );
         void hidedate( int nil, int nada );
+        void movedate( int monthstoadd, int weekstoadd );
         void render( SDL_Renderer* renderer );
         void execute( int funct, int arg1, int arg2 );
         ~hgDate();

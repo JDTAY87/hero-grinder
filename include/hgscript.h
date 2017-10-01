@@ -18,7 +18,7 @@ class hgScript
         enum msgactions{msg_setpos, msg_setlines, msg_setmsg, msg_showmsg, msg_hidemsg, msg_setsize};
         enum menuactions{menu_setpos, menu_loadmenu, menu_showmenu, menu_hidemenu, menu_setsize};
         enum statactions{stat_push, stat_showstats, stat_hidestats, stat_trainstat};
-        enum dateactions{date_showdate, date_hidedate};
+        enum dateactions{date_showdate, date_hidedate, date_movedate};
         static int titlemenu[];
         static int fieldsmenu[];
         static int trainmenu[];

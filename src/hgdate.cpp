@@ -32,6 +32,15 @@ void hgDate::hidedate( int nil, int nada )
     return;
 }
 
+void hgDate::movedate( int monthstoadd, int weekstoadd )
+{
+    week += weekstoadd;
+    if ( week > 4 ) { week = (week-1)%4+1; month++; }
+    month += monthstoadd;
+    if ( month > 12 ) { month = (month-1)%12+1; }
+    return;
+}
+
 void hgDate::render( SDL_Renderer* renderer )
 {
     if ( shown == true )
@@ -77,7 +86,7 @@ void hgDate::execute( int funct, int arg1, int arg2 )
 {
     void (hgDate::*functs[])(int,int) =
     {
-        &hgDate::showdate, &hgDate::hidedate
+        &hgDate::showdate, &hgDate::hidedate, &hgDate::movedate
     };
     (this->*functs[funct])( arg1, arg2 );
     return;

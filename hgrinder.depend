@@ -359,7 +359,7 @@
 	<string>
 	"hgsdl2.h"
 
-1506792059 source:c:\test\hgrinder\src\hgmessage.cpp
+1506795443 source:c:\test\hgrinder\src\hgmessage.cpp
 	"hgmessage.h"
 
 1504879929 c:\test\hgrinder\include\hgmessage.h
@@ -382,7 +382,7 @@
 
 1504561222 c:\test\hgrinder\include\hgmenudata.h
 
-1506789753 c:\test\hgrinder\include\hgscript.h
+1506818729 c:\test\hgrinder\include\hgscript.h
 
 1506793374 source:c:\test\hgrinder\src\hgmenudata.cpp
 	"hgmenudata.h"
@@ -390,7 +390,7 @@
 1506792195 source:c:\test\hgrinder\src\hgmsgdata.cpp
 	"hgmsgdata.h"
 
-1506793444 source:c:\test\hgrinder\src\hgscript.cpp
+1506818793 source:c:\test\hgrinder\src\hgscript.cpp
 	"hgscript.h"
 
 1505172542 c:\test\hgrinder\include\hgdata.h
@@ -748,10 +748,10 @@
 1506793791 source:c:\test\hgrinder\src\hgstats.cpp
 	"hgstats.h"
 
-1506694978 c:\test\hgrinder\include\hgdate.h
+1506818291 c:\test\hgrinder\include\hgdate.h
 	"hgobject.h"
 
-1506696612 source:c:\test\hgrinder\src\hgdate.cpp
+1506819806 source:c:\test\hgrinder\src\hgdate.cpp
 	"hgdate.h"
 
 1506794107 source:c:\test\hgrinder\src\hgobject.cpp

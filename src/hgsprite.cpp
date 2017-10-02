@@ -1,10 +1,15 @@
 #include "hgsprite.h"
 
-hgSprite::hgSprite( hgSprData* sprdata )
+hgSprite::hgSprite()
 {
-    data = sprdata;
     curframe = (0);
     shown = false;
+    return;
+}
+
+void hgSprite::setdata( hgSprData* sprdata )
+{
+    data = sprdata;
     return;
 }
 

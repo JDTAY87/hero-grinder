@@ -1,14 +1,19 @@
 #include "hgmessage.h"
 
-hgMessage::hgMessage( hgMsgData* msgdata )
+hgMessage::hgMessage()
 {
-    data = msgdata;
     shown = false;
     nooflines = 0;
     for ( int z = 0; z < 10; z++ )
     {
         message[z] = "";
     }
+    return;
+}
+
+void hgMessage::setdata( hgMsgData* msgdata )
+{
+    data = msgdata;
     return;
 }
 

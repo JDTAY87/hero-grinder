@@ -7,7 +7,8 @@
 class hgSprite : public hgObject
 {
     public:
-        hgSprite( hgSprData* sprdata );
+        hgSprite();
+        void setdata( hgSprData* sprdata );
         void settextture( SDL_Texture* texture );
         void loadsprite( int sprite, int nada );
         void setpos( int x, int y );

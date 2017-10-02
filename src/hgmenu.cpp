@@ -1,9 +1,8 @@
 #include "hgmenu.h"
 
-hgMenu::hgMenu( hgMenuData* menudata )
+hgMenu::hgMenu()
 {
     shown = false;
-    data = menudata;
     noofoptions = 0;
     cursorpos = 0;
     for ( int z = 0; z < 10; z++ )
@@ -11,6 +10,12 @@ hgMenu::hgMenu( hgMenuData* menudata )
         scriptptrs[z] = 0;
         options[z] = "";
     }
+    return;
+}
+
+void hgMenu::setdata( hgMenuData* menudata )
+{
+    data = menudata;
     return;
 }
 

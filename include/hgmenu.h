@@ -7,7 +7,8 @@
 class hgMenu : public hgObject
 {
     public:
-        hgMenu( hgMenuData* menudata );
+        hgMenu();
+        void setdata( hgMenuData* menudata );
         void loadmenu( int location, int lines );
         void setfont( SDL_Texture* texture );
         void setpos( int x, int y );

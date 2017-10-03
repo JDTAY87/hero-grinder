@@ -53,7 +53,7 @@ void hgSprite::render( SDL_Renderer* renderer )
         srcrect.h = spritebox.h;
         srcrect.x = curframe%framesx*spritebox.w;
         srcrect.y = curframe/framesy*spritebox.h;
-        SDL_RenderCopy( renderer, textures[cursprite]->gettexture(), &srcrect, &spritebox );
+        SDL_RenderCopy( renderer, textures[cursprite], &srcrect, &spritebox );
     }
     return;
 }

@@ -1,10 +1,10 @@
 #include "hgobject.h"
 
-hgTexture* hgObject::textures[] = { NULL, NULL, NULL, NULL };
+SDL_Texture* hgObject::textures[] = { NULL, NULL, NULL, NULL };
 
 int hgObject::pushpull[10] = { 0, 0, 0, 0, 0, 0, 0, 0, 0, 0 };
 
-void hgObject::settexture( int number, hgTexture* texture )
+void hgObject::settexture( int number, SDL_Texture* texture )
 {
     textures[number] = texture;
     return;

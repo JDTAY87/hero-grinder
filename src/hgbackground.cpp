@@ -14,7 +14,7 @@ void hgBackground::setbg( int number, int nada )
 
 void hgBackground::render( SDL_Renderer* renderer )
 {
-    SDL_RenderCopy( renderer, textures[currentbg]->gettexture(), NULL, NULL );
+    SDL_RenderCopy( renderer, textures[currentbg], NULL, NULL );
     return;
 }
 

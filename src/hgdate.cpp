@@ -67,12 +67,12 @@ void hgDate::render( SDL_Renderer* renderer )
             srcrect.x = (months[month][z]%16)*10;
             srcrect.y = (months[month][z]/16-2)*20;
             dstrect.x = 520+z*10;
-            SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
+            SDL_RenderCopy( renderer, textures[currentfont], &srcrect, &dstrect );
         }
         dstrect.x = 590;
         srcrect.y = 20;
         srcrect.x = week*10;
-        SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
+        SDL_RenderCopy( renderer, textures[currentfont], &srcrect, &dstrect );
     }
     return;
 }

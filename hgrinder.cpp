@@ -53,10 +53,10 @@ bool hgGame::hgInit()
     else if ( !hgcowboy.loadtexture( SDL2.getrenderer(), "hgcowboy.png" ) ) { success = false; }
     else
     {
-        background.settexture( 0, &jfont2 );
-        background.settexture( 1, &hgbg01 );
-        background.settexture( 2, &hgbg02 );
-        background.settexture( 3, &hgcowboy );
+        background.settexture( 0, jfont2.gettexture() );
+        background.settexture( 1, hgbg01.gettexture() );
+        background.settexture( 2, hgbg02.gettexture() );
+        background.settexture( 3, hgcowboy.gettexture() );
         herospr.setdata( &sprdata );
         msg1.setdata( &msgdata );
         menu1.setdata( &menudata );

@@ -91,7 +91,7 @@ void hgMessage::render( SDL_Renderer* renderer )
                 {
                     srcrect.x = (message[z1][z2]%16)*10;
                     srcrect.y = (message[z1][z2]/16-2)*20;
-                    SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
+                    SDL_RenderCopy( renderer, textures[currentfont], &srcrect, &dstrect );
                     dstrect.x += 10;
                 }
                 else
@@ -110,7 +110,7 @@ void hgMessage::render( SDL_Renderer* renderer )
                     {
                         dstrect.x -= 10;
                         srcrect.x = (pull%10)*10;
-                        SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
+                        SDL_RenderCopy( renderer, textures[currentfont], &srcrect, &dstrect );
                         pull /= 10;
                     }
                     dstrect.x += sizeofpull*10;

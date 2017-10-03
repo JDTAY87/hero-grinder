@@ -10,7 +10,6 @@ class hgMenu : public hgObject
         hgMenu();
         void setdata( hgMenuData* menudata );
         void loadmenu( int location, int lines );
-        void setfont( SDL_Texture* texture );
         void setpos( int x, int y );
         void setsize( int x, int y );
         void showmenu( int nil, int nada );
@@ -24,12 +23,12 @@ class hgMenu : public hgObject
     protected:
 
     private:
-        hgMenuData* data;
+        static hgMenuData* data;
+        int currentfont;
         bool shown;
         int noofoptions;
         int scriptptrs[10];
         const char* options[10];
-        SDL_Texture* font;
         int cursorpos;
         int posx;
         int posy;

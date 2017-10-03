@@ -53,20 +53,13 @@ bool hgGame::hgInit()
     else if ( !hgcowboy.loadtexture( SDL2.getrenderer(), "hgcowboy.png" ) ) { success = false; }
     else
     {
-        background.settexture( 0, hgbg01.gettexture() );
-        background.settexture( 1, hgbg02.gettexture() );
+        background.settexture( 0, &jfont2 );
+        background.settexture( 1, &hgbg01 );
+        background.settexture( 2, &hgbg02 );
+        background.settexture( 3, &hgcowboy );
         herospr.setdata( &sprdata );
-        herospr.settextture( hgcowboy.gettexture() );
         msg1.setdata( &msgdata );
-        msg1.setfont( jfont2.gettexture() );
-        msg2.setdata( &msgdata );
-        msg2.setfont( jfont2.gettexture() );
         menu1.setdata( &menudata );
-        menu1.setfont( jfont2.gettexture() );
-        menu2.setdata( &menudata );
-        menu2.setfont( jfont2.gettexture() );
-        gamedate.setfont( jfont2.gettexture() );
-        herostats.setfont( jfont2.gettexture() );
     }
     return success;
 }

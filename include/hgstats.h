@@ -7,7 +7,6 @@ class hgStats : public hgObject
 {
     public:
         hgStats();
-        void setfont( SDL_Texture* texture );
         void showstats( int nil, int nada );
         void hidestats( int nil, int nada );
         void trainstat( int stattotrain, int nada );
@@ -21,7 +20,7 @@ class hgStats : public hgObject
     private:
         int stats[6];
         static const char* statnames[];
-        SDL_Texture* font;
+        int currentfont;
         bool shown;
         int statgain;
 };

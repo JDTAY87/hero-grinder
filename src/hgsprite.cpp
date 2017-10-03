@@ -1,7 +1,10 @@
 #include "hgsprite.h"
 
+hgSprData* hgSprite::data = NULL;
+
 hgSprite::hgSprite()
 {
+    cursprite = 3;
     curframe = (0);
     shown = false;
     return;
@@ -10,12 +13,6 @@ hgSprite::hgSprite()
 void hgSprite::setdata( hgSprData* sprdata )
 {
     data = sprdata;
-    return;
-}
-
-void hgSprite::settextture( SDL_Texture* texture )
-{
-    spritetexture = texture;
     return;
 }
 
@@ -56,7 +53,7 @@ void hgSprite::render( SDL_Renderer* renderer )
         srcrect.h = spritebox.h;
         srcrect.x = curframe%framesx*spritebox.w;
         srcrect.y = curframe/framesy*spritebox.h;
-        SDL_RenderCopy( renderer, spritetexture, &srcrect, &spritebox );
+        SDL_RenderCopy( renderer, textures[cursprite]->gettexture(), &srcrect, &spritebox );
     }
     return;
 }

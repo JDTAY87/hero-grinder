@@ -9,7 +9,6 @@ class hgSprite : public hgObject
     public:
         hgSprite();
         void setdata( hgSprData* sprdata );
-        void settextture( SDL_Texture* texture );
         void loadsprite( int sprite, int nada );
         void setpos( int x, int y );
         void showsprite( int nil, int nada );
@@ -21,9 +20,9 @@ class hgSprite : public hgObject
     protected:
 
     private:
-        hgSprData* data;
+        static hgSprData* data;
+        int cursprite;
         bool shown;
-        SDL_Texture* spritetexture;
         SDL_Rect spritebox;
         int framesx;
         int framesy;

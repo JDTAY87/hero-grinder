@@ -8,13 +8,8 @@ const char* hgStats::statnames[] =
 hgStats::hgStats()
 {
     for ( int z = 0; z < 6; z++ ) { stats[z] = 100; }
+    currentfont = 0;
     shown = false;
-    return;
-}
-
-void hgStats::setfont( SDL_Texture* texture )
-{
-    font = texture;
     return;
 }
 
@@ -78,18 +73,18 @@ void hgStats::render( SDL_Renderer* renderer )
                 srcrect.x = (statnames[z1][z2]%16)*10;
                 srcrect.y = (statnames[z1][z2]/16-2)*20;
                 dstrect.x = 270+(z2*10);
-                SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
             }
             srcrect.y = 20;
             srcrect.x = (stats[z1]%10)*10;
             dstrect.x = 350;
-            SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+            SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
             srcrect.x = (stats[z1]%100)-(stats[z1]%10);
             dstrect.x = 340;
-            SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+            SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
             srcrect.x = (stats[z1]-(stats[z1]%100))/10;
             dstrect.x = 330;
-            SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+            SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
         }
     }
     return;

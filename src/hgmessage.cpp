@@ -1,7 +1,10 @@
 #include "hgmessage.h"
 
+hgMsgData* hgMessage::data = NULL;
+
 hgMessage::hgMessage()
 {
+    currentfont = 0;
     shown = false;
     nooflines = 0;
     for ( int z = 0; z < 10; z++ )
@@ -26,12 +29,6 @@ void hgMessage::setlines( int lines, int nada )
 void hgMessage::setmessage( int msgline, int line )
 {
     message[msgline] = data->getdata( line );
-    return;
-}
-
-void hgMessage::setfont( SDL_Texture* texture )
-{
-    font = texture;
     return;
 }
 
@@ -94,7 +91,7 @@ void hgMessage::render( SDL_Renderer* renderer )
                 {
                     srcrect.x = (message[z1][z2]%16)*10;
                     srcrect.y = (message[z1][z2]/16-2)*20;
-                    SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                    SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
                     dstrect.x += 10;
                 }
                 else
@@ -113,7 +110,7 @@ void hgMessage::render( SDL_Renderer* renderer )
                     {
                         dstrect.x -= 10;
                         srcrect.x = (pull%10)*10;
-                        SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                        SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
                         pull /= 10;
                     }
                     dstrect.x += sizeofpull*10;

@@ -45,7 +45,7 @@ int hgScript::fieldsmenu[] =
     obj_menu2, menu_setpos, 28, 26, 1,
     obj_menu2, menu_showmenu, 0, 0, 1,
     obj_data, data_changemenu, 1, 0, 0,
-    obj_bg, bg_setbg, 1, 0, 1,
+    obj_bg, bg_setbg, 2, 0, 1,
     obj_msg1, msg_setmsg, 0, 11, 1,
     obj_menu1, menu_hidemenu, 0, 0, 1,
     obj_menu1, menu_setsize, 8, 3, 1,
@@ -161,7 +161,7 @@ int hgScript::trainmenu[] =
 
 int hgScript::citymenu[] =
 {
-    obj_bg, bg_setbg, 0, 0, 1,
+    obj_bg, bg_setbg, 1, 0, 1,
     obj_msg1, msg_setmsg, 0, 3, 1,
     obj_menu1, menu_hidemenu, 0, 0, 1,
     obj_menu1, menu_setsize, 8, 6, 1,

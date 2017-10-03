@@ -1,7 +1,10 @@
 #include "hgmenu.h"
 
+hgMenuData* hgMenu::data = NULL;
+
 hgMenu::hgMenu()
 {
+    currentfont = 0;
     shown = false;
     noofoptions = 0;
     cursorpos = 0;
@@ -27,12 +30,6 @@ void hgMenu::loadmenu( int location, int lines )
         scriptptrs[z] = data->getptr( location+z );
         options[z] = data->getdata( location+z );
     }
-    return;
-}
-
-void hgMenu::setfont( SDL_Texture* texture )
-{
-    font = texture;
     return;
 }
 
@@ -108,7 +105,7 @@ void hgMenu::render( SDL_Renderer* renderer )
                     srcrect.y = (options[z1][z2]/16-2)*20;
                     dstrect.x = posx*10+(z2*10);
                     dstrect.y = posy*10+(z1*20);
-                    SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+                    SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
                 }
             }
         }
@@ -116,7 +113,7 @@ void hgMenu::render( SDL_Renderer* renderer )
         srcrect.y = 20;
         dstrect.x = posx*10;
         dstrect.y = posy*10+(cursorpos*20);
-        SDL_RenderCopy( renderer, font, &srcrect, &dstrect );
+        SDL_RenderCopy( renderer, textures[currentfont]->gettexture(), &srcrect, &dstrect );
     }
     return;
 }

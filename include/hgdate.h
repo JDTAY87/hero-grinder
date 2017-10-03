@@ -7,7 +7,6 @@ class hgDate : public hgObject
 {
     public:
         hgDate();
-        void setfont( SDL_Texture* texture );
         void showdate( int nil, int nada );
         void hidedate( int nil, int nada );
         void movedate( int monthstoadd, int weekstoadd );
@@ -21,7 +20,7 @@ class hgDate : public hgObject
         int month;
         int week;
         static const char* months[];
-        SDL_Texture* font;
+        int currentfont;
         bool shown;
 };
 

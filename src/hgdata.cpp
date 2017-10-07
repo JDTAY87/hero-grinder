@@ -31,11 +31,17 @@ void hgData::changemenu( int menu, int nada )
 void hgData::changescript( int script, int nada )
 {
     currentscript = script;
+    return;
 }
 
 void hgData::selectquit( int nil, int nada )
 {
     quit = true;
+    return;
+}
+
+void hgData::donothing( int nil, int nada )
+{
     return;
 }
 
@@ -46,7 +52,10 @@ void hgData::render( SDL_Renderer* renderer )
 
 void hgData::execute( int funct, int arg1, int arg2 )
 {
-    void (hgData::*functs[])(int,int) = { &hgData::changemenu, &hgData::changescript, &hgData::selectquit };
+    void (hgData::*functs[])(int,int) =
+    {
+        &hgData::changemenu, &hgData::changescript, &hgData::selectquit, &hgData::donothing
+    };
     (this->*functs[funct])( arg1, arg2 );
     return;
 }

@@ -1,13 +1,23 @@
 #include "hgmenu.h"
 
-int hgMenu::menuptrs[] =
+int hgMenu::menudata[] =
 {
-    9, 20, 21,
-    0, 6, 16, 23, 24, 30,
-    35, 31,
-    0, 13, 26, 39, 52, 65, 78,
-    81,
-    0, 7, 8
+    10, 21, 22,
+    1, 7, 17, 25, 26, 32,
+    37, 33,
+    1, 14, 27, 40, 53, 66, 79,
+    82,
+    1, 8, 9
+};
+
+int hgMenu::hilightdata[] =
+{
+    0, 0, 0,
+    40, 45, 50, 55, 60, 65,
+    0, 0,
+    0, 0, 0, 0, 0, 0,
+    0,
+    0, 0, 0
 };
 
 const char* hgMenu::data[] =
@@ -29,6 +39,7 @@ hgMenu::hgMenu()
     for ( int z = 0; z < 10; z++ )
     {
         scriptptrs[z] = 0;
+        hilightptrs[z] = 0;
         options[z] = "";
     }
     return;
@@ -39,7 +50,8 @@ void hgMenu::loadmenu( int location, int lines )
     noofoptions = lines;
     for ( int z = 0; z < lines; z++ )
     {
-        scriptptrs[z] = menuptrs[location+z];
+        scriptptrs[z] = menudata[location+z];
+        hilightptrs[z] = hilightdata[location+z];
         options[z] = data[location+z];
     }
     return;
@@ -85,6 +97,11 @@ void hgMenu::setcursorpos( int change )
 int hgMenu::getselection()
 {
     return scriptptrs[ cursorpos ];
+}
+
+int hgMenu::gethilight()
+{
+    return hilightptrs[ cursorpos ];
 }
 
 void hgMenu::render( SDL_Renderer* renderer )

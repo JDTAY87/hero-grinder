@@ -14,6 +14,7 @@ class hgMenu : public hgObject
         void hidemenu( int nil, int nada );
         void setcursorpos( int change );
         int getselection();
+        int gethilight();
         void render( SDL_Renderer* renderer );
         void execute( int funct, int arg1, int arg2 );
         ~hgMenu();
@@ -21,12 +22,14 @@ class hgMenu : public hgObject
     protected:
 
     private:
-        static int menuptrs[];
+        static int menudata[];
+        static int hilightdata[];
         static const char* data[];
         int currentfont;
         bool shown;
         int noofoptions;
         int scriptptrs[10];
+        int hilightptrs[10];
         const char* options[10];
         int cursorpos;
         int posx;

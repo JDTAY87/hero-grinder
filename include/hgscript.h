@@ -13,7 +13,7 @@ class hgScript
 
     private:
         enum scriptobjs{obj_data, obj_bg, obj_herospr, obj_msg1, obj_msg2, obj_menu1, obj_menu2, obj_gamedate, obj_herostats};
-        enum dataactions{data_changemenu, data_changescript, data_selectquit};
+        enum dataactions{data_changemenu, data_changescript, data_selectquit, data_donothing};
         enum spractions{spr_loadsprite, spr_setpos, spr_showsprite, spr_hidesprite};
         enum msgactions{msg_setpos, msg_setlines, msg_setmsg, msg_showmsg, msg_hidemsg, msg_setsize};
         enum menuactions{menu_setpos, menu_loadmenu, menu_showmenu, menu_hidemenu, menu_setsize};

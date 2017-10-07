@@ -7,7 +7,13 @@ const char* hgMessage::data[] =
     " POW went up % to %.", " INT went up % to %.", " ACC went up % to %.",
     " SPD went up % to %.", " DEF went up % to %.", " VIT went up % to %.",
     " The hero rests this week.",
-    "  Grinder City"
+    "  Grinder City",
+    " Increase your hero's stats through training.",
+    " Recover your hero's energy and relieve hero stress.",
+    " Visit various facilities in Grinder City.",
+    " Check for quests and other events.",
+    " View your hero's status, stats, and skills.",
+    " Quit the game. (Option to save coming soon.)"
 };
 
 hgMessage::hgMessage()

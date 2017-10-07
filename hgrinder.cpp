@@ -63,7 +63,8 @@ void hgGame::hgMainLoop()
     bool fullscreen = false;
     bool paused = false;
     bool scripttime = true;
-    int scriptloc = (0);
+    bool hilighttime = true;
+    int scriptloc = 5;
     while ( !quit )
     {
         while ( SDL_PollEvent(&event) )
@@ -83,13 +84,16 @@ void hgGame::hgMainLoop()
                     break;
                 case SDLK_UP:
                     menus[maindata.getmenu()]->setcursorpos( -1 );
+                    hilighttime = true;
                     break;
                 case SDLK_DOWN:
                     menus[maindata.getmenu()]->setcursorpos( 1 );
+                    hilighttime = true;
                     break;
                 case SDLK_x:
                     scriptloc = menus[maindata.getmenu()]->getselection()*5;
                     scripttime = true;
+                    hilighttime = true;
                     break;
                 }
             }
@@ -102,18 +106,27 @@ void hgGame::hgMainLoop()
                     break;
                 case SDL_CONTROLLER_BUTTON_DPAD_UP:
                     menus[maindata.getmenu()]->setcursorpos( -1 );
+                    hilighttime = true;
                     break;
                 case SDL_CONTROLLER_BUTTON_DPAD_DOWN:
                     menus[maindata.getmenu()]->setcursorpos( 1 );
+                    hilighttime = true;
                     break;
                 case SDL_CONTROLLER_BUTTON_A:
                     scriptloc = menus[maindata.getmenu()]->getselection()*5;
                     scripttime = true;
+                    hilighttime = true;
                     break;
                 }
             }
         }
         if ( scripttime == true ) { hgDoScript( maindata.getscript(), scriptloc ); scripttime = false; }
+        if ( hilighttime == true )
+        {
+            scriptloc = menus[maindata.getmenu()]->gethilight()*5;
+            hgDoScript( maindata.getscript(), scriptloc );
+            hilighttime = false;
+        }
         if ( maindata.quitselected() == true ) { quit = true; }
         if ( !paused ) { hgUpdateScreen(); } else { SDL_Delay( 1 ); }
     }

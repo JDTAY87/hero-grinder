@@ -359,14 +359,11 @@
 	<string>
 	"hgsdl2.h"
 
-1506997347 source:c:\test\hgrinder\src\hgmessage.cpp
+1507392549 source:c:\test\hgrinder\src\hgmessage.cpp
 	"hgmessage.h"
 
-1506998324 c:\test\hgrinder\include\hgmessage.h
-	<stdio.h>
-	<string>
+1507392476 c:\test\hgrinder\include\hgmessage.h
 	"hgobject.h"
-	"hgmsgdata.h"
 
 1507051563 c:\test\hgrinder\include\hgobject.h
 	"hgsdl2.h"
@@ -376,7 +373,7 @@
 	"hgobject.h"
 	"hgmenudata.h"
 
-1506997326 source:c:\test\hgrinder\src\hgmenu.cpp
+1507051358 source:c:\test\hgrinder\src\hgmenu.cpp
 	"hgmenu.h"
 
 1504460600 c:\test\hgrinder\include\hgmsgdata.h
@@ -725,7 +722,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1506997305 source:c:\test\hgrinder\src\hgbackground.cpp
+1507051420 source:c:\test\hgrinder\src\hgbackground.cpp
 	"hgbackground.h"
 
 1506995723 c:\test\hgrinder\include\hgbackground.h
@@ -733,28 +730,27 @@
 
 1505150897 c:\test\hgrinder\include\hgsprdata.h
 
-1506998324 c:\test\hgrinder\include\hgsprite.h
+1507392291 c:\test\hgrinder\include\hgsprite.h
 	"hgobject.h"
-	"hgsprdata.h"
 
 1506973857 source:c:\test\hgrinder\src\hgsprdata.cpp
 	"hgsprdata.h"
 
-1506997381 source:c:\test\hgrinder\src\hgsprite.cpp
+1507392267 source:c:\test\hgrinder\src\hgsprite.cpp
 	"hgsprite.h"
 
 1506997658 c:\test\hgrinder\include\hgstats.h
 	"hgobject.h"
 
-1506997744 source:c:\test\hgrinder\src\hgstats.cpp
+1507051491 source:c:\test\hgrinder\src\hgstats.cpp
 	"hgstats.h"
 
 1506997776 c:\test\hgrinder\include\hgdate.h
 	"hgobject.h"
 
-1506997929 source:c:\test\hgrinder\src\hgdate.cpp
+1507051507 source:c:\test\hgrinder\src\hgdate.cpp
 	"hgdate.h"
 
-1506997503 source:c:\test\hgrinder\src\hgobject.cpp
+1507051302 source:c:\test\hgrinder\src\hgobject.cpp
 	"hgobject.h"
 

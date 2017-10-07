@@ -1,15 +1,11 @@
 #ifndef HGMESSAGE_H
 #define HGMESSAGE_H
-#include <stdio.h>
-#include <string>
 #include "hgobject.h"
-#include "hgmsgdata.h"
 
 class hgMessage : public hgObject
 {
     public:
         hgMessage();
-        void setdata( hgMsgData* msgdata );
         void setlines( int lines, int nada );
         void setmessage( int msgline, int line );
         void setpos( int x, int y );
@@ -23,7 +19,7 @@ class hgMessage : public hgObject
     protected:
 
     private:
-        static hgMsgData* data;
+        static const char* data[];
         int currentfont;
         bool shown;
         int nooflines;

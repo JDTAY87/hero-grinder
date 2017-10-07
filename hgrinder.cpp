@@ -3,14 +3,11 @@
 #include "hgsdl2.h"
 #include "hgtexture.h"
 #include "hgobject.h"
-#include "hgmsgdata.h"
-#include "hgmenudata.h"
 #include "hgmessage.h"
 #include "hgmenu.h"
 #include "hgscript.h"
 #include "hgdata.h"
 #include "hgbackground.h"
-#include "hgsprdata.h"
 #include "hgsprite.h"
 #include "hgstats.h"
 #include "hgdate.h"
@@ -29,9 +26,6 @@ private:
     hgTexture hgbg02;
     hgTexture hgcowboy;
     hgData maindata;
-    hgSprData sprdata;
-    hgMsgData msgdata;
-    hgMenuData menudata;
     hgBackground background;
     hgSprite herospr;
     hgMessage msg1;
@@ -57,9 +51,6 @@ bool hgGame::hgInit()
         background.settexture( 1, hgbg01.gettexture() );
         background.settexture( 2, hgbg02.gettexture() );
         background.settexture( 3, hgcowboy.gettexture() );
-        herospr.setdata( &sprdata );
-        msg1.setdata( &msgdata );
-        menu1.setdata( &menudata );
     }
     return success;
 }

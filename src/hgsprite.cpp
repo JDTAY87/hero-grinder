@@ -1,6 +1,9 @@
 #include "hgsprite.h"
 
-hgSprData* hgSprite::data = NULL;
+int hgSprite::sprprops[] =
+{
+    80, 80, 2, 1
+};
 
 hgSprite::hgSprite()
 {
@@ -10,18 +13,12 @@ hgSprite::hgSprite()
     return;
 }
 
-void hgSprite::setdata( hgSprData* sprdata )
-{
-    data = sprdata;
-    return;
-}
-
 void hgSprite::loadsprite( int sprite, int nada )
 {
-    spritebox.w = data->getprops( sprite, 0 );
-    spritebox.h = data->getprops( sprite, 1 );
-    framesx = data->getprops( sprite, 2 );
-    framesy = data->getprops( sprite, 3 );
+    spritebox.w = sprprops[sprite*4];
+    spritebox.h = sprprops[sprite*4+1];
+    framesx = sprprops[sprite*4+2];
+    framesy = sprprops[sprite*4+3];
     return;
 }
 

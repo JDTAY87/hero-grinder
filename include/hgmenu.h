@@ -1,14 +1,12 @@
 #ifndef HGMENU_H
 #define HGMENU_H
 #include "hgobject.h"
-#include "hgmenudata.h"
 
 
 class hgMenu : public hgObject
 {
     public:
         hgMenu();
-        void setdata( hgMenuData* menudata );
         void loadmenu( int location, int lines );
         void setpos( int x, int y );
         void setsize( int x, int y );
@@ -23,7 +21,8 @@ class hgMenu : public hgObject
     protected:
 
     private:
-        static hgMenuData* data;
+        static int menuptrs[];
+        static const char* data[];
         int currentfont;
         bool shown;
         int noofoptions;

@@ -43,13 +43,10 @@
 		<Unit filename="include/hgdata.h" />
 		<Unit filename="include/hgdate.h" />
 		<Unit filename="include/hgmenu.h" />
-		<Unit filename="include/hgmenudata.h" />
 		<Unit filename="include/hgmessage.h" />
-		<Unit filename="include/hgmsgdata.h" />
 		<Unit filename="include/hgobject.h" />
 		<Unit filename="include/hgscript.h" />
 		<Unit filename="include/hgsdl2.h" />
-		<Unit filename="include/hgsprdata.h" />
 		<Unit filename="include/hgsprite.h" />
 		<Unit filename="include/hgstats.h" />
 		<Unit filename="include/hgtexture.h" />
@@ -57,13 +54,10 @@
 		<Unit filename="src/hgdata.cpp" />
 		<Unit filename="src/hgdate.cpp" />
 		<Unit filename="src/hgmenu.cpp" />
-		<Unit filename="src/hgmenudata.cpp" />
 		<Unit filename="src/hgmessage.cpp" />
-		<Unit filename="src/hgmsgdata.cpp" />
 		<Unit filename="src/hgobject.cpp" />
 		<Unit filename="src/hgscript.cpp" />
 		<Unit filename="src/hgsdl2.cpp" />
-		<Unit filename="src/hgsprdata.cpp" />
 		<Unit filename="src/hgsprite.cpp" />
 		<Unit filename="src/hgstats.cpp" />
 		<Unit filename="src/hgtexture.cpp" />

@@ -1,6 +1,14 @@
 #include "hgmessage.h"
 
-hgMsgData* hgMessage::data = NULL;
+const char* hgMessage::data[] =
+{
+    " Hero Grinder", "  Coming soon.", "  By JDTAY87 ",
+    " Grinder Fields",
+    " POW went up % to %.", " INT went up % to %.", " ACC went up % to %.",
+    " SPD went up % to %.", " DEF went up % to %.", " VIT went up % to %.",
+    " The hero rests this week.",
+    "  Grinder City"
+};
 
 hgMessage::hgMessage()
 {
@@ -14,12 +22,6 @@ hgMessage::hgMessage()
     return;
 }
 
-void hgMessage::setdata( hgMsgData* msgdata )
-{
-    data = msgdata;
-    return;
-}
-
 void hgMessage::setlines( int lines, int nada )
 {
     nooflines = lines;
@@ -28,7 +30,7 @@ void hgMessage::setlines( int lines, int nada )
 
 void hgMessage::setmessage( int msgline, int line )
 {
-    message[msgline] = data->getdata( line );
+    message[msgline] = data[line];
     return;
 }
 

@@ -1,6 +1,24 @@
 #include "hgmenu.h"
 
-hgMenuData* hgMenu::data = NULL;
+int hgMenu::menuptrs[] =
+{
+    9, 20, 21,
+    0, 6, 16, 23, 24, 30,
+    35, 31,
+    0, 13, 26, 39, 52, 65, 78,
+    81,
+    0, 7, 8
+};
+
+const char* hgMenu::data[] =
+{
+    " New Game", " Credits", " Exit",
+    " Train", " Rest", " City", " Events", " Status", " Exit",
+    " Return", " Return",
+    "  POW", "  INT", "  ACC", "  SPD", "  DEF", "  VIT", "  Back",
+    " Return",
+    " Fields", " Portal", " Exit"
+};
 
 hgMenu::hgMenu()
 {
@@ -16,19 +34,13 @@ hgMenu::hgMenu()
     return;
 }
 
-void hgMenu::setdata( hgMenuData* menudata )
-{
-    data = menudata;
-    return;
-}
-
 void hgMenu::loadmenu( int location, int lines )
 {
     noofoptions = lines;
     for ( int z = 0; z < lines; z++ )
     {
-        scriptptrs[z] = data->getptr( location+z );
-        options[z] = data->getdata( location+z );
+        scriptptrs[z] = menuptrs[location+z];
+        options[z] = data[location+z];
     }
     return;
 }

@@ -1,14 +1,12 @@
 #ifndef HGSPRITE_H
 #define HGSPRITE_H
 #include "hgobject.h"
-#include "hgsprdata.h"
 
 
 class hgSprite : public hgObject
 {
     public:
         hgSprite();
-        void setdata( hgSprData* sprdata );
         void loadsprite( int sprite, int nada );
         void setpos( int x, int y );
         void showsprite( int nil, int nada );
@@ -20,7 +18,7 @@ class hgSprite : public hgObject
     protected:
 
     private:
-        static hgSprData* data;
+        static int sprprops[];
         int cursprite;
         bool shown;
         SDL_Rect spritebox;

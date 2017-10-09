@@ -91,6 +91,7 @@ void hgGame::hgMainLoop()
                     hilighttime = true;
                     break;
                 case SDLK_x:
+                case SDLK_END:
                     scriptloc = menus[maindata.getmenu()]->getselection()*5;
                     scripttime = true;
                     hilighttime = true;
